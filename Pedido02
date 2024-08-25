@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Namoro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h1 {
+            color: #ff69b4;
+        }
+
+        button {
+            background-color: #ff69b4;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #ff1493;
+        }
+
+        .message {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #responseMessage {
+            font-size: 18px;
+            color: #ff69b4;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pedido Especial</h1>
+        <p class="message">Olá, [Nome]! Desde o momento em que te conheci, você tem iluminado meus dias com seu sorriso e alegria. Não posso imaginar minha vida sem você. Eu gostaria de saber: você quer namorar comigo?</p>
+        <textarea id="responseText" rows="4" cols="50" placeholder="Digite sua resposta aqui..."></textarea><br>
+        <button id="submitResponseBtn">Enviar Resposta</button>
+        <p id="responseMessage"></p>
+    </div>
+
+    <script>
+        document.getElementById('submitResponseBtn').addEventListener('click', function() {
+            var response = document.getElementById('responseText').value.trim();
+            var responseMessage = document.getElementById('responseMessage');
+
+            if (response) {
+                responseMessage.textContent = 'Obrigado pela sua resposta: ' + response;
+                document.getElementById('responseText').value = ''; // Limpa o campo de resposta
+            } else {
+                responseMessage.textContent = 'Por favor, digite uma resposta.';
+            }
+        });
+    </script>
+</body>
+</html>
